@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /temporary%20screenshots/
+
+Sitemap: https://webgeek.uk/sitemap.xml
