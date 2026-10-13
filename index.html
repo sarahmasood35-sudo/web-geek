@@ -34,7 +34,7 @@
         "url": "https://webgeek.uk/",
         "logo": "https://webgeek.uk/brand_assets/webgeek%20logo.png",
         "image": "https://webgeek.uk/brand_assets/webgeek%20logo.png",
-        "email": "hello@webgeek.uk",
+        "email": "info@webgeek.uk",
         "priceRange": "£1,495 – £12,000+",
         "address": { "@type": "PostalAddress", "addressLocality": "Bristol", "addressCountry": "GB" },
         "areaServed": { "@type": "Country", "name": "United Kingdom" },
@@ -73,7 +73,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -93,7 +93,7 @@
             sans: ['Inter', 'system-ui', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
           },
-          spacing: { 18: '4.5rem', 30: '7.5rem' },
+          spacing: { 30: '7.5rem' },
         },
       },
     };
@@ -219,7 +219,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
+      .reveal { opacity: 1 !important; transform: none !important; }
     }
   </style>
 </head>
@@ -247,10 +247,10 @@
     </defs>
   </svg>
 
-  <!-- NAV (floating layer) -->
-  <!-- scroll progress -->
+  <!-- Scroll progress -->
   <div id="progress" class="fixed top-0 inset-x-0 h-[2px] z-[60] origin-left bg-gradient-to-r from-iris-300 via-iris-400 to-iris-600" style="transform: scaleX(0)" aria-hidden="true"></div>
 
+  <!-- NAV (floating layer) -->
   <header id="site-header" class="fixed top-4 inset-x-0 z-50 px-4">
     <nav class="mx-auto max-w-6xl flex items-center justify-between rounded-full bg-night-3/75 backdrop-blur-md border border-white/10 hairline shadow-elev pl-5 pr-2 py-2">
       <a href="#" class="btn flex items-center gap-2.5" aria-label="WebGeek home">
@@ -289,7 +289,7 @@
         </h1>
         <div class="mt-10 grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-end">
           <p class="reveal text-lg sm:text-xl text-snow-2 max-w-xl">
-            WebGeek is an independent web design and development agency in London. We build fast, SEO-ready websites that turn visitors into enquiries for small businesses across the UK. You get the quality of a London agency at a fixed price that makes sense for a growing business.
+            WebGeek is an independent web design and development agency in Bristol. We build fast, SEO-ready websites that turn visitors into enquiries for small businesses across the UK. You get agency-level quality at a fixed price that makes sense for a growing business.
           </p>
           <div class="reveal md:justify-self-end">
             <div class="flex flex-wrap gap-3 md:justify-end">
@@ -328,8 +328,8 @@
       <!-- rotating badge -->
       <div class="hidden lg:block absolute right-10 top-36 z-10 w-36 h-36" aria-hidden="true">
         <svg viewBox="0 0 100 100" class="spin-slow w-full h-full">
-          <defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" /></defs>
-          <text font-family="JetBrains Mono, monospace" font-size="7.6" letter-spacing="1.9" fill="#B4B2C5"><textPath href="#c">DESIGN · ENGINEER · LAUNCH · GROW · </textPath></text>
+          <defs><path id="badge-path" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" /></defs>
+          <text font-family="JetBrains Mono, monospace" font-size="7.6" letter-spacing="1.9" fill="#B4B2C5"><textPath href="#badge-path">DESIGN · ENGINEER · LAUNCH · GROW · </textPath></text>
         </svg>
         <span class="absolute inset-0 grid place-items-center"><svg class="w-10 h-11"><use href="#wg-mark" /></svg></span>
       </div>
@@ -372,7 +372,7 @@
             <h3 class="font-display font-semibold text-2xl h-tight mb-3">SEO & site speed</h3>
             <p class="text-snow-2">Technical SEO, local SEO, Core Web Vitals audits and ongoing conversion experiments that help you rank higher on Google.</p>
           </article>
-          <article class="reveal lift spot-card rounded-3xl bg-night-4 border border-iris-400/25 hairline p-8 shadow-float relative overflow-hidden">
+          <article class="reveal lift spot-card rounded-3xl bg-night-4 border border-iris-400/25 hairline p-8 shadow-float">
             <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-iris-500/40 blur-3xl" aria-hidden="true"></div>
             <div class="relative">
               <div class="icon-tile w-12 h-12 rounded-2xl bg-iris-600 text-white grid place-items-center font-mono text-sm mb-8">∞</div>
@@ -401,7 +401,7 @@
             <thead>
               <tr class="text-snow-3 font-mono text-xs uppercase tracking-widest">
                 <th scope="col" class="font-normal w-[22%]"><span class="sr-only">Feature</span></th>
-                <th scope="col" class="us font-normal text-iris-300 rounded-t-2xl">
+                <th scope="col" class="us font-normal text-iris-300">
                   <span class="inline-flex items-center gap-2 normal-case tracking-normal font-display font-semibold text-base text-snow"><svg class="w-4 h-5" aria-hidden="true"><use href="#wg-mark" /></svg>WebGeek</span>
                 </th>
                 <th scope="col" class="font-normal">Typical UK agency</th>
@@ -461,7 +461,7 @@
               </tr>
               <tr>
                 <th scope="row" class="font-semibold text-snow">Support after launch</th>
-                <td class="us text-snow rounded-b-2xl"><span class="ok">✓</span> 30 days free, then from £79 / mo</td>
+                <td class="us text-snow"><span class="ok">✓</span> 30 days free, then from £79 / mo</td>
                 <td>Retainers from £500 / mo</td>
                 <td>Depends on availability</td>
                 <td>Help-centre articles</td>
@@ -502,7 +502,7 @@
           </article>
 
           <!-- Growth (featured) -->
-          <article class="reveal lift spot-card rounded-3xl bg-night-4 border border-iris-400/30 hairline p-8 shadow-float flex flex-col relative overflow-hidden lg:-my-4 lg:py-12">
+          <article class="reveal lift spot-card rounded-3xl bg-night-4 border border-iris-400/30 hairline p-8 shadow-float flex flex-col lg:-my-4 lg:py-12">
             <div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-iris-500/40 blur-3xl" aria-hidden="true"></div>
             <div class="flex items-center justify-between gap-4">
               <h3 class="font-display font-semibold text-2xl h-tight">Growth</h3>
@@ -686,7 +686,7 @@
           <div class="relative z-10">
             <p class="font-mono text-xs uppercase tracking-[.2em] text-iris-300 mb-4">06 — Let's talk</p>
             <h2 class="font-display font-semibold h-tight text-4xl sm:text-6xl">Got a project in mind?</h2>
-            <p class="text-snow-2 mt-6 max-w-md">Tell us a little about it. We'll reply within two business day and send a fixed quote within 48 hours of our call.</p>
+            <p class="text-snow-2 mt-6 max-w-md">Tell us a little about it. We'll reply within two business days and send a fixed quote within 48 hours of our call.</p>
             <ul class="mt-8 space-y-3 text-snow-2">
               <li class="flex gap-3"><span class="ok" aria-hidden="true">✓</span>Free 30-minute discovery call</li>
               <li class="flex gap-3"><span class="ok" aria-hidden="true">✓</span>Free website audit if you already have a site</li>
@@ -716,7 +716,7 @@
             <button type="submit" class="btn mt-2 inline-flex items-center justify-center gap-2 shine rounded-full bg-iris-600 text-white font-semibold py-4 shadow-float hover:bg-iris-500 active:bg-iris-700">
               Send enquiry <span class="arrow">↗</span>
             </button>
-            <p data-ok class="hidden text-sm text-iris-300 font-semibold text-center">Thanks — we'll be in touch within two  business day.</p>
+            <p data-ok class="hidden text-sm text-iris-300 font-semibold text-center">Thanks — we'll be in touch within two business days.</p>
           </form>
         </div>
       </div>
