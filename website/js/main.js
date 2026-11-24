@@ -42,19 +42,58 @@ function showStatus(ok, text) {
   formStatus.classList.toggle('text-iris-600', ok);
   formStatus.classList.toggle('text-snow', !ok);
 }
+// Spam and abuse checks, run before anything is sent
+const formLoadedAt = Date.now();
+const MIN_FILL_MS = 3000;          // bots submit instantly; people take a few seconds
+const COOLDOWN_MS = 60 * 1000;     // one enquiry per minute from this browser
+const MAX_LINKS = 3;               // spam messages are usually stuffed with links
+const COOLDOWN_KEY = 'wg-last-enquiry';
+
+function lastSent() {
+  try { return Number(localStorage.getItem(COOLDOWN_KEY)) || 0; } catch { return 0; }
+}
+function markSent() {
+  try { localStorage.setItem(COOLDOWN_KEY, String(Date.now())); } catch { /* storage blocked: skip */ }
+}
+// Trim values, strip control characters and angle brackets so nothing can be read as HTML
+function clean(value) {
+  return String(value).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').replace(/[<>]/g, '').trim();
+}
+function checkForm(data) {
+  if (data._honey) return 'bot';
+  if (Date.now() - formLoadedAt < MIN_FILL_MS) return 'Please take a moment to fill in the form, then try again.';
+  if (Date.now() - lastSent() < COOLDOWN_MS) return 'Thanks, we already have your message. Please wait a minute before sending another.';
+  if (!data.name || data.name.length < 2) return 'Please enter your name.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email)) return 'Please enter a valid email address.';
+  if (!data.details || data.details.length < 10) return 'Please tell us a little more about your project.';
+  if ((data.details.match(/https?:\/\/|www\./gi) || []).length > MAX_LINKS) return 'Please include fewer links in your message.';
+  return null;
+}
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const button = form.querySelector('[type="submit"]');
+  if (!form.reportValidity()) return;
+
+  const data = {};
+  for (const [key, value] of new FormData(form)) data[key] = clean(value);
+
+  const problem = checkForm(data);
+  if (problem === 'bot') { form.reset(); showStatus(true, "Thanks — we'll be in touch within one business day."); return; }
+  if (problem) { showStatus(false, problem); return; }
+  delete data._honey;
+
   button.disabled = true;
   try {
     const res = await fetch('https://formsubmit.co/ajax/info@webgeek.uk', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      body: JSON.stringify(data),
     });
-    const data = await res.json();
-    if (!res.ok || String(data.success) !== 'true') throw new Error(data.message);
+    const reply = await res.json();
+    if (!res.ok || String(reply.success) !== 'true') throw new Error(reply.message);
     form.reset();
+    markSent();
     showStatus(true, "Thanks — we'll be in touch within one business day.");
   } catch {
     showStatus(false, 'Sorry, that didn’t send. Please email us at info@webgeek.uk.');

@@ -1,0 +1,37 @@
+# WebGeek security settings for Apache hosting.
+# Upload this file to the same folder as index.html.
+
+# Don't list folder contents if there's no index file
+Options -Indexes
+
+# Block access to hidden files such as .htaccess and .git
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  # Force HTTPS in browsers for a year (only sent over HTTPS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on' || %{HTTP:X-Forwarded-Proto} == 'https'"
+
+  # Only load scripts, styles, fonts and form posts from trusted sources; block framing by other sites
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
+
+  # Stop other sites embedding the page (clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Stop browsers guessing file types
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Share only the domain, not full URLs, with other sites
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Turn off device features the site doesn't use
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+
+  # Isolate the page from cross-origin windows
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Hide server software details
+  Header unset X-Powered-By
+</IfModule>
+

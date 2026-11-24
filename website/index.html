@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web Design & Development Agency in Bristol | WebGeek</title>
-  <meta name="description" content="WebGeek is a Bristol web design and development agency building fast, SEO-ready websites, online stores and web apps for small businesses through to larger organisations across the UK." />
+  <meta name="description" content="Bristol web design and development agency building fast, SEO-ready websites, online stores and web apps for UK businesses of every size." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://webgeek.uk/" />
   <meta name="theme-color" content="#FFFFFF" />
+
+  <!-- Security: only load scripts, styles, fonts and form posts from trusted sources -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Social sharing -->
   <meta property="og:type" content="website" />
@@ -62,10 +66,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -119,11 +122,11 @@
     <!-- HERO -->
     <section class="hero relative pt-[132px] sm:pt-[160px] pb-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-8">
-        <div class="flex items-center gap-4 font-mono text-xs uppercase tracking-[.18em] text-snow-3">
+        <div class="flex items-center gap-4 font-sans font-semibold text-xs uppercase tracking-[.18em] text-snow-3">
           <span class="w-8 h-px bg-iris-600"></span> Web design &amp; development agency — Bristol, UK
         </div>
 
-        <h1 id="hero-title" class="mt-8 font-display font-medium h-tight text-[3rem] sm:text-[5.2rem] lg:text-[7.4rem] max-w-[14ch]">
+        <h1 id="hero-title" class="mt-8 font-display font-semibold h-tight text-[3rem] sm:text-[5.2rem] lg:text-[7.4rem] max-w-[14ch]">
           <span class="word"><span>Digital</span></span> <span class="word"><span>craft</span></span> <span class="word"><span>for</span></span> <span class="word"><span>businesses</span></span> <span class="word"><span>that</span></span> <span class="word"><span class="text-iris-600">mean</span></span> <span class="word"><span class="text-iris-600">business.</span></span>
         </h1>
 
@@ -165,7 +168,7 @@
 
           <!-- floating chips -->
           <div class="hidden sm:block absolute right-10 top-12 rounded-xl bg-white/95 shadow-float px-5 py-4 float-y" aria-hidden="true">
-            <p class="font-mono text-[11px] uppercase tracking-widest text-snow-3">PageSpeed target</p>
+            <p class="font-sans font-semibold text-[11px] uppercase tracking-widest text-snow-3">PageSpeed target</p>
             <p class="font-display font-bold text-3xl text-iris-600 mt-1">90+</p>
           </div>
           <div class="hidden sm:flex absolute right-24 bottom-12 items-center gap-3 rounded-xl bg-white/95 shadow-float px-5 py-4 float-y" style="animation-delay:-2.5s" aria-hidden="true">
@@ -176,10 +179,10 @@
 
         <!-- Facts row -->
         <dl class="mt-px grid grid-cols-2 lg:grid-cols-4 border-b border-ink/[.08]">
-          <div class="reveal py-8 pr-6 border-r border-ink/[.08]"><dt class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3">Who we serve</dt><dd class="font-display text-lg sm:text-xl mt-2">Small business to enterprise</dd></div>
-          <div class="reveal py-8 px-6 lg:border-r border-ink/[.08]"><dt class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3">What we do</dt><dd class="font-display text-lg sm:text-xl mt-2">Design · Build · Grow</dd></div>
-          <div class="reveal py-8 pr-6 lg:px-6 border-r border-t lg:border-t-0 border-ink/[.08]"><dt class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3">Where</dt><dd class="font-display text-lg sm:text-xl mt-2">Bristol, working UK-wide</dd></div>
-          <div class="reveal py-8 px-6 border-t lg:border-t-0 border-ink/[.08]"><dt class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3">How we quote</dt><dd class="font-display text-lg sm:text-xl mt-2">Fixed, tailored to scope</dd></div>
+          <div class="reveal py-8 pr-6 border-r border-ink/[.08]"><dt class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3">Who we serve</dt><dd class="font-display text-lg sm:text-xl mt-2">Small business to enterprise</dd></div>
+          <div class="reveal py-8 px-6 lg:border-r border-ink/[.08]"><dt class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3">What we do</dt><dd class="font-display text-lg sm:text-xl mt-2">Design · Build · Grow</dd></div>
+          <div class="reveal py-8 pr-6 lg:px-6 border-r border-t lg:border-t-0 border-ink/[.08]"><dt class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3">Where</dt><dd class="font-display text-lg sm:text-xl mt-2">Bristol, working UK-wide</dd></div>
+          <div class="reveal py-8 px-6 border-t lg:border-t-0 border-ink/[.08]"><dt class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3">How we quote</dt><dd class="font-display text-lg sm:text-xl mt-2">Fixed, tailored to scope</dd></div>
         </dl>
       </div>
     </section>
@@ -188,55 +191,55 @@
     <section id="capabilities" class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-8">
         <div class="grid gap-8 lg:grid-cols-12 mb-14 sm:mb-20">
-          <p class="lg:col-span-4 font-mono text-xs uppercase tracking-[.18em] text-iris-600 pt-3">(01) Capabilities</p>
-          <h2 class="reveal lg:col-span-8 font-display font-medium h-tight text-4xl sm:text-6xl">End-to-end digital, under one roof.</h2>
+          <p class="lg:col-span-4 font-sans font-semibold text-xs uppercase tracking-[.18em] text-iris-600 pt-3">(01) Capabilities</p>
+          <h2 class="reveal lg:col-span-8 font-display font-semibold h-tight text-4xl sm:text-6xl">End-to-end digital, under one roof.</h2>
         </div>
 
         <ul class="border-t border-ink/[.1]">
           <li class="cap-row reveal group">
             <a href="#contact" class="grid gap-3 sm:gap-6 sm:grid-cols-12 items-baseline py-8 sm:py-10 border-b border-ink/[.1] rounded-sm">
-              <span class="sm:col-span-1 font-mono text-sm text-snow-3">01</span>
-              <h3 class="sm:col-span-4 font-display font-medium text-2xl sm:text-4xl h-tight cap-title">Website design</h3>
+              <span class="sm:col-span-1 font-sans font-semibold text-sm text-snow-3">01</span>
+              <h3 class="sm:col-span-4 font-display font-semibold text-2xl sm:text-4xl h-tight cap-title">Website design</h3>
               <p class="sm:col-span-5 text-snow-2">Bespoke, brand-led websites designed around your customers and built to convert visitors into enquiries.</p>
               <span class="hidden sm:block sm:col-span-2 text-right text-2xl text-iris-600 cap-arrow">→</span>
             </a>
           </li>
           <li class="cap-row reveal group">
             <a href="#contact" class="grid gap-3 sm:gap-6 sm:grid-cols-12 items-baseline py-8 sm:py-10 border-b border-ink/[.1] rounded-sm">
-              <span class="sm:col-span-1 font-mono text-sm text-snow-3">02</span>
-              <h3 class="sm:col-span-4 font-display font-medium text-2xl sm:text-4xl h-tight cap-title">Development</h3>
+              <span class="sm:col-span-1 font-sans font-semibold text-sm text-snow-3">02</span>
+              <h3 class="sm:col-span-4 font-display font-semibold text-2xl sm:text-4xl h-tight cap-title">Development</h3>
               <p class="sm:col-span-5 text-snow-2">Fast, accessible builds in Next.js, WordPress or Webflow, with a CMS your team will find easy to use.</p>
               <span class="hidden sm:block sm:col-span-2 text-right text-2xl text-iris-600 cap-arrow">→</span>
             </a>
           </li>
           <li class="cap-row reveal group">
             <a href="#contact" class="grid gap-3 sm:gap-6 sm:grid-cols-12 items-baseline py-8 sm:py-10 border-b border-ink/[.1] rounded-sm">
-              <span class="sm:col-span-1 font-mono text-sm text-snow-3">03</span>
-              <h3 class="sm:col-span-4 font-display font-medium text-2xl sm:text-4xl h-tight cap-title">E-commerce</h3>
+              <span class="sm:col-span-1 font-sans font-semibold text-sm text-snow-3">03</span>
+              <h3 class="sm:col-span-4 font-display font-semibold text-2xl sm:text-4xl h-tight cap-title">E-commerce</h3>
               <p class="sm:col-span-5 text-snow-2">Shopify and custom online stores with smooth checkout, UK shipping and VAT, and easy product management.</p>
               <span class="hidden sm:block sm:col-span-2 text-right text-2xl text-iris-600 cap-arrow">→</span>
             </a>
           </li>
           <li class="cap-row reveal group">
             <a href="#contact" class="grid gap-3 sm:gap-6 sm:grid-cols-12 items-baseline py-8 sm:py-10 border-b border-ink/[.1] rounded-sm">
-              <span class="sm:col-span-1 font-mono text-sm text-snow-3">04</span>
-              <h3 class="sm:col-span-4 font-display font-medium text-2xl sm:text-4xl h-tight cap-title">Web applications</h3>
+              <span class="sm:col-span-1 font-sans font-semibold text-sm text-snow-3">04</span>
+              <h3 class="sm:col-span-4 font-display font-semibold text-2xl sm:text-4xl h-tight cap-title">Web applications</h3>
               <p class="sm:col-span-5 text-snow-2">Portals, dashboards and booking systems that streamline how your business runs, delivered in phases.</p>
               <span class="hidden sm:block sm:col-span-2 text-right text-2xl text-iris-600 cap-arrow">→</span>
             </a>
           </li>
           <li class="cap-row reveal group">
             <a href="#contact" class="grid gap-3 sm:gap-6 sm:grid-cols-12 items-baseline py-8 sm:py-10 border-b border-ink/[.1] rounded-sm">
-              <span class="sm:col-span-1 font-mono text-sm text-snow-3">05</span>
-              <h3 class="sm:col-span-4 font-display font-medium text-2xl sm:text-4xl h-tight cap-title">SEO &amp; growth</h3>
+              <span class="sm:col-span-1 font-sans font-semibold text-sm text-snow-3">05</span>
+              <h3 class="sm:col-span-4 font-display font-semibold text-2xl sm:text-4xl h-tight cap-title">SEO &amp; growth</h3>
               <p class="sm:col-span-5 text-snow-2">Technical and local SEO, analytics and ongoing optimisation so your site keeps climbing after launch.</p>
               <span class="hidden sm:block sm:col-span-2 text-right text-2xl text-iris-600 cap-arrow">→</span>
             </a>
           </li>
           <li class="cap-row reveal group">
             <a href="#contact" class="grid gap-3 sm:gap-6 sm:grid-cols-12 items-baseline py-8 sm:py-10 border-b border-ink/[.1] rounded-sm">
-              <span class="sm:col-span-1 font-mono text-sm text-snow-3">06</span>
-              <h3 class="sm:col-span-4 font-display font-medium text-2xl sm:text-4xl h-tight cap-title">Care &amp; support</h3>
+              <span class="sm:col-span-1 font-sans font-semibold text-sm text-snow-3">06</span>
+              <h3 class="sm:col-span-4 font-display font-semibold text-2xl sm:text-4xl h-tight cap-title">Care &amp; support</h3>
               <p class="sm:col-span-5 text-snow-2">UK hosting, security, backups and a dedicated team on hand for updates and improvements.</p>
               <span class="hidden sm:block sm:col-span-2 text-right text-2xl text-iris-600 cap-arrow">→</span>
             </a>
@@ -249,29 +252,29 @@
     <section id="approach" class="py-24 sm:py-32 bg-night-2">
       <div class="mx-auto max-w-7xl px-4 sm:px-8 grid gap-14 lg:grid-cols-12">
         <div class="lg:col-span-5">
-          <p class="font-mono text-xs uppercase tracking-[.18em] text-iris-600">(02) Our approach</p>
-          <h2 class="reveal mt-6 font-display font-medium h-tight text-4xl sm:text-6xl">Strategy first. Pixels second.</h2>
+          <p class="font-sans font-semibold text-xs uppercase tracking-[.18em] text-iris-600">(02) Our approach</p>
+          <h2 class="reveal mt-6 font-display font-semibold h-tight text-4xl sm:text-6xl">Strategy first. Pixels second.</h2>
           <p class="reveal mt-6 text-lg text-snow-2 max-w-md">Every decision we make is tied to a business goal, whether that's more enquiries, more sales or less admin for your team.</p>
         </div>
         <div class="lg:col-span-7 grid gap-px bg-ink/[.08] rounded-2xl overflow-hidden border border-ink/[.08] sm:grid-cols-2">
           <article class="reveal bg-night p-8 sm:p-10">
             <svg class="w-10 h-10 text-iris-600" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="20" cy="20" r="15"/><circle cx="20" cy="20" r="8"/><circle cx="20" cy="20" r="1.5" fill="currentColor"/></svg>
-            <h3 class="font-display font-medium text-2xl mt-8">Goal-led</h3>
+            <h3 class="font-display font-semibold text-2xl mt-8">Goal-led</h3>
             <p class="text-snow-2 mt-3">We start with what success looks like for your business, then design backwards from it.</p>
           </article>
           <article class="reveal bg-night p-8 sm:p-10">
             <svg class="w-10 h-10 text-iris-600" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 30 16 18l7 7 11-15"/><path d="M27 10h7v7"/></svg>
-            <h3 class="font-display font-medium text-2xl mt-8">Built to perform</h3>
+            <h3 class="font-display font-semibold text-2xl mt-8">Built to perform</h3>
             <p class="text-snow-2 mt-3">Fast load times, clean code and technical SEO come as standard on every project.</p>
           </article>
           <article class="reveal bg-night p-8 sm:p-10">
             <svg class="w-10 h-10 text-iris-600" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="17" width="26" height="17" rx="3"/><path d="M13 17v-5a7 7 0 0 1 14 0v5"/></svg>
-            <h3 class="font-display font-medium text-2xl mt-8">Yours to own</h3>
+            <h3 class="font-display font-semibold text-2xl mt-8">Yours to own</h3>
             <p class="text-snow-2 mt-3">You own the design, code and content outright. No lock-in, ever.</p>
           </article>
           <article class="reveal bg-night p-8 sm:p-10">
             <svg class="w-10 h-10 text-iris-600" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 20a12 12 0 0 1 21-8M32 20a12 12 0 0 1-21 8"/><path d="M29 5v7h-7M11 35v-7h7"/></svg>
-            <h3 class="font-display font-medium text-2xl mt-8">A long-term partner</h3>
+            <h3 class="font-display font-semibold text-2xl mt-8">A long-term partner</h3>
             <p class="text-snow-2 mt-3">Launch is the beginning. We stay on to support, measure and improve.</p>
           </article>
         </div>
@@ -282,17 +285,17 @@
     <section id="industries" class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-8">
         <div class="grid gap-8 lg:grid-cols-12 mb-14 sm:mb-20">
-          <p class="lg:col-span-4 font-mono text-xs uppercase tracking-[.18em] text-iris-600 pt-3">(03) Who we work with</p>
+          <p class="lg:col-span-4 font-sans font-semibold text-xs uppercase tracking-[.18em] text-iris-600 pt-3">(03) Who we work with</p>
           <div class="lg:col-span-8">
-            <h2 class="reveal font-display font-medium h-tight text-4xl sm:text-6xl">The right approach for every stage of growth.</h2>
+            <h2 class="reveal font-display font-semibold h-tight text-4xl sm:text-6xl">The right approach for every stage of growth.</h2>
             <p class="reveal mt-6 text-lg text-snow-2 max-w-2xl">Every project is scoped and quoted around your goals, so you only pay for what moves your business forward.</p>
           </div>
         </div>
 
         <div class="grid gap-6 lg:grid-cols-3">
           <article class="reveal lift stage-card rounded-2xl border border-ink/[.1] bg-night p-8 sm:p-10 shadow-elev flex flex-col">
-            <div class="flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-[.18em] text-snow-3">Stage 01</span><span class="stage-bar w-16"></span></div>
-            <h3 class="font-display font-medium text-3xl h-tight mt-10">Small businesses</h3>
+            <div class="flex items-center justify-between"><span class="font-sans font-semibold text-xs uppercase tracking-[.18em] text-snow-3">Stage 01</span><span class="stage-bar w-16"></span></div>
+            <h3 class="font-display font-semibold text-3xl h-tight mt-10">Small businesses</h3>
             <p class="text-snow-2 mt-3">Start-ups, trades and local businesses that need a professional website that wins work.</p>
             <ul class="mt-8 pt-8 border-t border-ink/[.08] space-y-3 text-snow-2 flex-1">
               <li class="flex gap-3"><span class="text-iris-600" aria-hidden="true">—</span>Custom-designed website</li>
@@ -302,8 +305,8 @@
             <a href="#contact" data-type="New website" class="type-cta btn mt-10 inline-flex items-center justify-between rounded-lg border border-ink/15 px-5 py-3.5 font-semibold text-snow hover:border-ink/40 hover:bg-ink/[.03] active:bg-ink/[.06]">Request a quote <span class="arrow">→</span></a>
           </article>
           <article class="reveal lift stage-card rounded-2xl border border-ink/[.1] bg-night p-8 sm:p-10 shadow-elev flex flex-col">
-            <div class="flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-[.18em] text-snow-3">Stage 02</span><span class="stage-bar w-28"></span></div>
-            <h3 class="font-display font-medium text-3xl h-tight mt-10">Growing companies</h3>
+            <div class="flex items-center justify-between"><span class="font-sans font-semibold text-xs uppercase tracking-[.18em] text-snow-3">Stage 02</span><span class="stage-bar w-28"></span></div>
+            <h3 class="font-display font-semibold text-3xl h-tight mt-10">Growing companies</h3>
             <p class="text-snow-2 mt-3">SMEs that want their website to generate leads and sales week after week.</p>
             <ul class="mt-8 pt-8 border-t border-ink/[.08] space-y-3 text-snow-2 flex-1">
               <li class="flex gap-3"><span class="text-iris-600" aria-hidden="true">—</span>Bespoke design system &amp; copy</li>
@@ -314,8 +317,8 @@
             <a href="#contact" data-type="Redesign" class="type-cta btn mt-10 inline-flex items-center justify-between rounded-lg bg-iris-600 px-5 py-3.5 font-semibold text-white shadow-float hover:bg-iris-500 active:bg-iris-700">Request a quote <span class="arrow">→</span></a>
           </article>
           <article class="reveal lift stage-card rounded-2xl border border-ink/[.1] bg-night p-8 sm:p-10 shadow-elev flex flex-col">
-            <div class="flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-[.18em] text-snow-3">Stage 03</span><span class="stage-bar w-40"></span></div>
-            <h3 class="font-display font-medium text-3xl h-tight mt-10">Larger organisations</h3>
+            <div class="flex items-center justify-between"><span class="font-sans font-semibold text-xs uppercase tracking-[.18em] text-snow-3">Stage 03</span><span class="stage-bar w-40"></span></div>
+            <h3 class="font-display font-semibold text-3xl h-tight mt-10">Larger organisations</h3>
             <p class="text-snow-2 mt-3">Teams that need custom functionality, multiple stakeholders and a dependable partner.</p>
             <ul class="mt-8 pt-8 border-t border-ink/[.08] space-y-3 text-snow-2 flex-1">
               <li class="flex gap-3"><span class="text-iris-600" aria-hidden="true">—</span>Web apps, portals &amp; dashboards</li>
@@ -328,7 +331,7 @@
 
         <!-- sectors -->
         <div class="reveal mt-16 flex flex-wrap gap-2.5">
-          <span class="mr-3 self-center font-mono text-xs uppercase tracking-[.18em] text-snow-3">Sectors</span>
+          <span class="mr-3 self-center font-sans font-semibold text-xs uppercase tracking-[.18em] text-snow-3">Sectors</span>
           <span class="chip">Construction</span><span class="chip">Hospitality</span><span class="chip">Healthcare</span><span class="chip">Retail</span><span class="chip">Professional services</span><span class="chip">Property</span><span class="chip">Education</span><span class="chip">Charities</span><span class="chip">Tech &amp; SaaS</span>
         </div>
       </div>
@@ -339,32 +342,32 @@
       <div class="absolute inset-0 grain-dark" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-8">
         <div class="grid gap-8 lg:grid-cols-12 mb-16 sm:mb-20">
-          <p class="lg:col-span-4 font-mono text-xs uppercase tracking-[.18em] text-iris-300 pt-3">(04) Process</p>
-          <h2 class="reveal lg:col-span-8 font-display font-medium h-tight text-4xl sm:text-6xl">A proven path from first call to launch.</h2>
+          <p class="lg:col-span-4 font-sans font-semibold text-xs uppercase tracking-[.18em] text-iris-300 pt-3">(04) Process</p>
+          <h2 class="reveal lg:col-span-8 font-display font-semibold h-tight text-4xl sm:text-6xl">A proven path from first call to launch.</h2>
         </div>
         <ol class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <li class="reveal step">
             <span class="step-dot"></span>
-            <p class="font-mono text-sm text-iris-300 mt-8">Week 1</p>
-            <h3 class="font-display font-medium text-2xl mt-2">Discover</h3>
+            <p class="font-sans font-semibold text-sm text-iris-300 mt-8">Week 1</p>
+            <h3 class="font-display font-semibold text-2xl mt-2">Discover</h3>
             <p class="text-white/65 mt-3">A free call to understand your goals, then a written scope and fixed quote.</p>
           </li>
           <li class="reveal step">
             <span class="step-dot"></span>
-            <p class="font-mono text-sm text-iris-300 mt-8">Weeks 2–3</p>
-            <h3 class="font-display font-medium text-2xl mt-2">Design</h3>
+            <p class="font-sans font-semibold text-sm text-iris-300 mt-8">Weeks 2–3</p>
+            <h3 class="font-display font-semibold text-2xl mt-2">Design</h3>
             <p class="text-white/65 mt-3">Structure, visual direction and full page designs, refined with your feedback.</p>
           </li>
           <li class="reveal step">
             <span class="step-dot"></span>
-            <p class="font-mono text-sm text-iris-300 mt-8">Weeks 3–6</p>
-            <h3 class="font-display font-medium text-2xl mt-2">Build</h3>
+            <p class="font-sans font-semibold text-sm text-iris-300 mt-8">Weeks 3–6</p>
+            <h3 class="font-display font-semibold text-2xl mt-2">Build</h3>
             <p class="text-white/65 mt-3">Clean, tested development with staging links so you see progress as it happens.</p>
           </li>
           <li class="reveal step">
             <span class="step-dot"></span>
-            <p class="font-mono text-sm text-iris-300 mt-8">Launch &amp; beyond</p>
-            <h3 class="font-display font-medium text-2xl mt-2">Launch &amp; grow</h3>
+            <p class="font-sans font-semibold text-sm text-iris-300 mt-8">Launch &amp; beyond</p>
+            <h3 class="font-display font-semibold text-2xl mt-2">Launch &amp; grow</h3>
             <p class="text-white/65 mt-3">A monitored launch, training for your team and ongoing support.</p>
           </li>
         </ol>
@@ -375,33 +378,33 @@
     <section id="faq" class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-8 grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-4">
-          <p class="font-mono text-xs uppercase tracking-[.18em] text-iris-600">(05) FAQ</p>
-          <h2 class="reveal mt-6 font-display font-medium h-tight text-4xl sm:text-5xl">Questions, answered.</h2>
+          <p class="font-sans font-semibold text-xs uppercase tracking-[.18em] text-iris-600">(05) FAQ</p>
+          <h2 class="reveal mt-6 font-display font-semibold h-tight text-4xl sm:text-5xl">Questions, answered.</h2>
           <p class="reveal mt-6 text-snow-2">Can't see yours? Email <a href="mailto:info@webgeek.uk" class="link-u text-iris-600 hover:text-iris-700">info@webgeek.uk</a>.</p>
         </div>
         <div class="lg:col-span-8 border-t border-ink/[.1]">
           <details class="group border-b border-ink/[.1]">
-            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-medium text-xl rounded-sm hover:text-iris-600 active:opacity-70">How much does a website cost?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
+            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-semibold text-xl rounded-sm hover:text-iris-600 active:opacity-70">How much does a website cost?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
             <p class="text-snow-2 pb-6 max-w-2xl">Every project is quoted individually. The price depends on the number of pages, how much content we create, and whether you need e-commerce or integrations. After a free discovery call you get a written scope and a fixed quote.</p>
           </details>
           <details class="group border-b border-ink/[.1]">
-            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-medium text-xl rounded-sm hover:text-iris-600 active:opacity-70">How long does a project take?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
+            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-semibold text-xl rounded-sm hover:text-iris-600 active:opacity-70">How long does a project take?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
             <p class="text-snow-2 pb-6 max-w-2xl">Most websites launch in 3–8 weeks depending on size. Online stores usually take 6–10 weeks, and web applications are delivered in phases.</p>
           </details>
           <details class="group border-b border-ink/[.1]">
-            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-medium text-xl rounded-sm hover:text-iris-600 active:opacity-70">Do you only work with businesses in Bristol?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
+            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-semibold text-xl rounded-sm hover:text-iris-600 active:opacity-70">Do you only work with businesses in Bristol?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
             <p class="text-snow-2 pb-6 max-w-2xl">No. We're based in Bristol and work with businesses across the UK, in person or over video calls.</p>
           </details>
           <details class="group border-b border-ink/[.1]">
-            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-medium text-xl rounded-sm hover:text-iris-600 active:opacity-70">Can we update the website ourselves?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
+            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-semibold text-xl rounded-sm hover:text-iris-600 active:opacity-70">Can we update the website ourselves?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
             <p class="text-snow-2 pb-6 max-w-2xl">Yes. Every site comes with an easy-to-use CMS, a training session and written guides.</p>
           </details>
           <details class="group border-b border-ink/[.1]">
-            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-medium text-xl rounded-sm hover:text-iris-600 active:opacity-70">Do you work with existing designs or brands?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
+            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-semibold text-xl rounded-sm hover:text-iris-600 active:opacity-70">Do you work with existing designs or brands?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
             <p class="text-snow-2 pb-6 max-w-2xl">Yes. We can build from your existing brand guidelines or designs, or create a new identity from scratch.</p>
           </details>
           <details class="group border-b border-ink/[.1]">
-            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-medium text-xl rounded-sm hover:text-iris-600 active:opacity-70">What happens after launch?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
+            <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display font-semibold text-xl rounded-sm hover:text-iris-600 active:opacity-70">What happens after launch?<span class="plus shrink-0 text-2xl text-iris-600">+</span></summary>
             <p class="text-snow-2 pb-6 max-w-2xl">You get 30 days of free support, then can move onto a care plan for hosting, maintenance and continuous improvement.</p>
           </details>
         </div>
@@ -414,24 +417,26 @@
         <div class="reveal relative rounded-2xl overflow-hidden contact-panel grain shadow-float grid gap-12 lg:grid-cols-12 p-8 sm:p-14 text-white">
           <div class="absolute inset-0 panel-lines opacity-60" aria-hidden="true"></div>
           <div class="relative lg:col-span-6">
-            <p class="font-mono text-xs uppercase tracking-[.18em] text-iris-100/80">(06) Contact</p>
-            <h2 class="mt-6 font-display font-medium h-tight text-5xl sm:text-7xl">Let's build something worth talking about.</h2>
+            <p class="font-sans font-semibold text-xs uppercase tracking-[.18em] text-iris-100/80">(06) Contact</p>
+            <h2 class="mt-6 font-display font-semibold h-tight text-5xl sm:text-7xl">Let's build something worth talking about.</h2>
             <p class="mt-6 text-lg text-white/75 max-w-md">Tell us about your project and we'll reply within one business day to arrange a free discovery call.</p>
             <a href="mailto:info@webgeek.uk" class="link-u inline-block mt-10 font-display text-2xl sm:text-3xl text-white hover:text-iris-100">info@webgeek.uk</a>
           </div>
-          <form id="contact-form" action="https://formsubmit.co/info@webgeek.uk" method="POST" class="relative lg:col-span-6 grid gap-4 rounded-xl bg-white text-snow p-6 sm:p-8 shadow-float">
+          <form id="contact-form" action="https://formsubmit.co/info@webgeek.uk" method="POST" autocomplete="on" class="relative lg:col-span-6 grid gap-4 rounded-xl bg-white text-snow p-6 sm:p-8 shadow-float">
             <input type="hidden" name="_subject" value="New website enquiry" />
             <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_template" value="table" />
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="grid gap-1.5 text-sm font-semibold">Name
-                <input required name="name" class="field" placeholder="Jane Doe" />
+                <input required name="name" autocomplete="name" minlength="2" maxlength="80" pattern="[^<>]+" title="Please enter your name without < or > characters" class="field" placeholder="Jane Doe" />
               </label>
               <label class="grid gap-1.5 text-sm font-semibold">Work email
-                <input required type="email" name="email" class="field" placeholder="jane@company.com" />
+                <input required type="email" name="email" autocomplete="email" maxlength="120" class="field" placeholder="jane@company.com" />
               </label>
             </div>
             <label class="grid gap-1.5 text-sm font-semibold">Company
-              <input name="company" class="field" placeholder="Company name" />
+              <input name="company" autocomplete="organization" maxlength="120" pattern="[^<>]+" title="Please avoid < or > characters" class="field" placeholder="Company name" />
             </label>
             <label class="grid gap-1.5 text-sm font-semibold">What do you need?
               <select id="project-type" name="project_type" class="field">
@@ -444,7 +449,7 @@
               </select>
             </label>
             <label class="grid gap-1.5 text-sm font-semibold">Project details
-              <textarea name="details" rows="4" class="field" placeholder="Tell us about your business and goals"></textarea>
+              <textarea required name="details" rows="4" minlength="10" maxlength="3000" class="field" placeholder="Tell us about your business and goals"></textarea>
             </label>
             <button type="submit" class="btn mt-2 inline-flex items-center justify-center gap-3 rounded-lg bg-ink text-white font-semibold py-4 hover:bg-iris-700 active:bg-iris-600 disabled:opacity-60 disabled:pointer-events-none">
               Send enquiry <span class="arrow">→</span>
@@ -467,23 +472,23 @@
         <p class="text-snow-2 mt-4 max-w-xs text-sm">Web design &amp; development agency for ambitious UK businesses.</p>
       </div>
       <div class="md:col-span-3">
-        <p class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3 mb-4">Studio</p>
+        <p class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3 mb-4">Studio</p>
         <address class="not-italic text-sm text-snow-2">Unit 8, St Gabriel's Business Park<br />Bristol BS5 0RT</address>
       </div>
       <div class="md:col-span-2">
-        <p class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3 mb-4">Explore</p>
+        <p class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3 mb-4">Explore</p>
         <ul class="space-y-2 text-sm text-snow-2"><li><a class="link-u hover:text-snow" href="#capabilities">Capabilities</a></li><li><a class="link-u hover:text-snow" href="#approach">Approach</a></li><li><a class="link-u hover:text-snow" href="#process">Process</a></li></ul>
       </div>
       <div class="md:col-span-2">
-        <p class="font-mono text-[11px] uppercase tracking-[.18em] text-snow-3 mb-4">Contact</p>
+        <p class="font-sans font-semibold text-[11px] uppercase tracking-[.18em] text-snow-3 mb-4">Contact</p>
         <ul class="space-y-2 text-sm text-snow-2"><li><a class="link-u hover:text-snow" href="mailto:info@webgeek.uk">info@webgeek.uk</a></li><li><a class="link-u hover:text-snow" href="#contact">Start a project</a></li></ul>
       </div>
     </div>
     <div class="mx-auto max-w-7xl px-4 sm:px-8 overflow-hidden">
       <p class="wordmark font-display font-bold select-none" aria-hidden="true">WebGeek</p>
     </div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-8 py-6 border-t border-ink/[.08] flex flex-col sm:flex-row justify-between gap-2 text-xs text-snow-3 font-mono">
-      <p>© 2026 WebGeek. All rights reserved.</p>
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 py-6 border-t border-ink/[.08] flex flex-col sm:flex-row justify-between gap-2 text-xs text-snow-3 font-sans font-semibold">
+      <p>© 2023–2026 WebGeek. All rights reserved.</p>
       <p>Bristol, United Kingdom</p>
     </div>
   </footer>

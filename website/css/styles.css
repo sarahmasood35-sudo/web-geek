@@ -8,7 +8,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 main { overflow-x: clip; }
 body { font-family: Inter, system-ui, sans-serif; line-height: 1.7; background: #FFFFFF; color: #14121F; -webkit-font-smoothing: antialiased; }
 ::selection { background: #5A4FCF; color: #fff; }
-.h-tight { letter-spacing: -0.035em; line-height: 1.02; }
+.h-tight { letter-spacing: -0.025em; line-height: 1.08; }
 .shadow-elev { box-shadow: var(--shadow-elev); }
 .shadow-float { box-shadow: var(--shadow-float); }
 
