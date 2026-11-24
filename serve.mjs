@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 
 const PORT = 3000;
-const ROOT = process.cwd();
+const ROOT = join(process.cwd(), 'website');
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css',
