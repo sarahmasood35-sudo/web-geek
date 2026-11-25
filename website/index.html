@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Security: only load scripts, styles, fonts and form posts from trusted sources -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Social sharing -->
@@ -68,8 +68,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/tailwind.css?v=20261125" />
+  <link rel="stylesheet" href="css/styles.css?v=20261125" />
 </head>
 
 <body class="overflow-x-hidden">
@@ -422,11 +422,9 @@
             <p class="mt-6 text-lg text-white/75 max-w-md">Tell us about your project and we'll reply within one business day to arrange a free discovery call.</p>
             <a href="mailto:info@webgeek.uk" class="link-u inline-block mt-10 font-display text-2xl sm:text-3xl text-white hover:text-iris-100">info@webgeek.uk</a>
           </div>
-          <form id="contact-form" action="https://formsubmit.co/info@webgeek.uk" method="POST" autocomplete="on" class="relative lg:col-span-6 grid gap-4 rounded-xl bg-white text-snow p-6 sm:p-8 shadow-float">
+          <form id="contact-form" action="https://formspree.io/f/mrpqrdrn" method="POST" autocomplete="on" class="relative lg:col-span-6 grid gap-4 rounded-xl bg-white text-snow p-6 sm:p-8 shadow-float">
             <input type="hidden" name="_subject" value="New website enquiry" />
-            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="grid gap-1.5 text-sm font-semibold">Name
                 <input required name="name" autocomplete="name" minlength="2" maxlength="80" pattern="[^<>]+" title="Please enter your name without < or > characters" class="field" placeholder="Jane Doe" />
@@ -455,6 +453,7 @@
               Send enquiry <span class="arrow">→</span>
             </button>
             <p id="form-status" role="status" class="hidden text-sm font-semibold text-center"></p>
+            <p class="text-xs text-snow-3 text-center">We only use your details to reply to your enquiry. See our <a href="/privacy-policy/" class="link-u text-iris-600 hover:text-iris-700">privacy policy</a>.</p>
           </form>
         </div>
       </div>
@@ -489,10 +488,10 @@
     </div>
     <div class="mx-auto max-w-7xl px-4 sm:px-8 py-6 border-t border-ink/[.08] flex flex-col sm:flex-row justify-between gap-2 text-xs text-snow-3 font-sans font-semibold">
       <p>© 2023–2026 WebGeek. All rights reserved.</p>
-      <p>Bristol, United Kingdom</p>
+      <p><a href="/privacy-policy/" class="link-u hover:text-snow">Privacy policy</a> · Bristol, United Kingdom</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20261125"></script>
 </body>
 </html>

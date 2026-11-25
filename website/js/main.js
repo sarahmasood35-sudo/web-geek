@@ -33,7 +33,8 @@ header.addEventListener('focusin', () => header.classList.remove('nav-hidden'));
 const projectType = document.getElementById('project-type');
 document.querySelectorAll('.type-cta').forEach((a) => a.addEventListener('click', () => { projectType.value = a.dataset.type; }));
 
-// Contact form: send to info@webgeek.uk via FormSubmit without leaving the page
+// Contact form: send enquiries via Formspree without leaving the page
+const FORM_ENDPOINT = 'https://formspree.io/f/mrpqrdrn';
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 function showStatus(ok, text) {
@@ -60,7 +61,7 @@ function clean(value) {
   return String(value).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').replace(/[<>]/g, '').trim();
 }
 function checkForm(data) {
-  if (data._honey) return 'bot';
+  if (data._gotcha) return 'bot';
   if (Date.now() - formLoadedAt < MIN_FILL_MS) return 'Please take a moment to fill in the form, then try again.';
   if (Date.now() - lastSent() < COOLDOWN_MS) return 'Thanks, we already have your message. Please wait a minute before sending another.';
   if (!data.name || data.name.length < 2) return 'Please enter your name.';
@@ -81,17 +82,18 @@ form.addEventListener('submit', async (e) => {
   const problem = checkForm(data);
   if (problem === 'bot') { form.reset(); showStatus(true, "Thanks — we'll be in touch within one business day."); return; }
   if (problem) { showStatus(false, problem); return; }
-  delete data._honey;
+  delete data._gotcha;
 
   button.disabled = true;
   try {
-    const res = await fetch('https://formsubmit.co/ajax/info@webgeek.uk', {
+    const res = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(data),
     });
-    const reply = await res.json();
-    if (!res.ok || String(reply.success) !== 'true') throw new Error(reply.message);
+    // Formspree replies { ok: true } on success, or { errors: [...] } with an error status
+    const reply = await res.json().catch(() => ({}));
+    if (!res.ok || reply.ok !== true) throw new Error(reply.errors?.map((e) => e.message).join(', ') || `HTTP ${res.status}`);
     form.reset();
     markSent();
     showStatus(true, "Thanks — we'll be in touch within one business day.");

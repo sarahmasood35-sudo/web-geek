@@ -9,12 +9,41 @@ Options -Indexes
   Require all denied
 </FilesMatch>
 
+# Load index.html first when a folder is requested
+DirectoryIndex index.html
+
+# Redirects from the old WordPress site, so Google results and old links keep working.
+# 301 = permanent move, which passes search rankings to the new page.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block the archived WordPress site (kept on the server as a backup) from the web
+  RewriteRule ^old-site(/|$) - [F,L]
+
+  # Main pages → matching section of the new homepage
+  # (QSD drops tracking codes like ?utm=… so the #section link isn't broken)
+  RewriteRule ^about/?$             /#approach      [R=301,L,NE,QSD]
+  RewriteRule ^team/?$              /#approach      [R=301,L,NE,QSD]
+  RewriteRule ^overview(/.*)?$      /#approach      [R=301,L,NE,QSD]
+  RewriteRule ^our-services/?$      /#capabilities  [R=301,L,NE,QSD]
+  RewriteRule ^pricing/?$           /#industries    [R=301,L,NE,QSD]
+  RewriteRule ^contact/?$           /#contact       [R=301,L,NE,QSD]
+
+  # Old WordPress sitemaps → new sitemap
+  RewriteRule ^wp-sitemap.*\.xml$   /sitemap.xml    [R=301,L,QSD]
+
+  # Old blog posts, demo pages, portfolio, archives and feeds → homepage
+  RewriteRule ^(hello-world|sample-page|disclaimer|page-404|marketing-growth|company-strategy|deliver-fresh-news|future-design-concept|technology-upgraded)/?$ / [R=301,L,QSD]
+  RewriteRule ^(stay-creative|analytics-tools)(-[0-9]+)?/?$ / [R=301,L,QSD]
+  RewriteRule ^(pf|category|tag|author|type|feed|comments)(/.*)?$ / [R=301,L,QSD]
+</IfModule>
+
 <IfModule mod_headers.c>
   # Force HTTPS in browsers for a year (only sent over HTTPS)
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on' || %{HTTP:X-Forwarded-Proto} == 'https'"
 
   # Only load scripts, styles, fonts and form posts from trusted sources; block framing by other sites
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 
   # Stop other sites embedding the page (clickjacking)
   Header always set X-Frame-Options "SAMEORIGIN"
@@ -26,7 +55,7 @@ Options -Indexes
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
   # Turn off device features the site doesn't use
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 
   # Isolate the page from cross-origin windows
   Header always set Cross-Origin-Opener-Policy "same-origin"

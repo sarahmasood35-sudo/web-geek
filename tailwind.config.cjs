@@ -1,7 +1,7 @@
 // Tailwind build config: run `npm run build:css` after changing classes in website/
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./website/index.html', './website/js/**/*.js'],
+  content: ['./website/**/*.html', './website/js/**/*.js'],
   theme: {
     extend: {
       colors: {
